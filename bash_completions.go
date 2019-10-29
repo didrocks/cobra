@@ -315,9 +315,9 @@ func writePostscript(buf *bytes.Buffer, name string) {
 
 `, name))
 	buf.WriteString(fmt.Sprintf(`if [[ $(type -t compopt) = "builtin" ]]; then
-    complete -o default -F __start_%s %s
+    complete -F __start_%s %s
 else
-    complete -o default -o nospace -F __start_%s %s
+    complete -o nospace -F __start_%s %s
 fi
 
 `, name, name, name, name))
